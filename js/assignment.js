@@ -6,34 +6,36 @@ const sumTheNumbersElement = document.getElementById("sum-the-numbers");
 const createNumberArrayElement = document.getElementById("create-number-array");
 
 function evenOrOdd() {
-    const num = 3;
-    // Write the logic to decide if the variable "num" is even or odd
-    // and set the element's value the string "Even" or "Odd" accordingly
-
+    const num = 3; // The number to check
+    if (num % 2 === 0) {
+        evenOrOddElement.textContent = "Even"; // Set the text content to "Even" if num is even
+    } else {
+        evenOrOddElement.textContent = "Odd"; // Set the text content to "Odd" if num is odd
+    }
 }
 
 function sumTheNumbers() {
     let sum = 0;
-    // Write the logic to sum the numbers 1 through 10
-    // using a for loop. Check the expected output
-    // on the assignment page
-
+    for (let i = 1; i <= 10; i++) {
+        sum += i; // Add each number to sum
+    }
+    sumTheNumbersElement.textContent = sum; // Display the sum in the element
 }
 
 function createNumberArray() {
     const numberArray = [];
-
-    // Write the logic that loops 10 times and adds the value
-    // to numberArray each iteration. Check the expected output
-    // on the assignment page
-
+    for (let i = 1; i <= 10; i++) {
+        numberArray.push(i); // Add each number from 1 to 10 to the array
+    }
+    createNumberArrayElement.textContent = numberArray.join(', '); // Display the array as a comma-separated string
 }
 
 function render() {
-    // Call the created functions
-
+    evenOrOdd();
+    sumTheNumbers();
+    createNumberArray();
 }
 
 submissionBtn.addEventListener("click", function () {
-    render();
+    render(); // Call the render function when the button is clicked
 });
